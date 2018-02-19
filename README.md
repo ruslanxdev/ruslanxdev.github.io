@@ -1,5 +1,5 @@
-# Ruslan Khusnetdinov
+# Руслан Хуснетдинова
 
-Hi, I’m JavaScript Developer. I work at [UCHi.RU](https://uchi.ru/). Before that, I designed bridges for a long time. I'm interested in design, architecture, art, mathematics, education and people.
+Привет, я разработчик интерфейсов. Я работаю в [Учи.ру](https://uchi.ru/). До этого, я долгое время проектировал мосты. Мне интересны математика, проектирование, программирвоание, автоматизация, образование и люди.</p>
 
-Contact me at [ruslankhh@gmail.com](mailto:ruslankhh+gh-readme@gmail.com).
+Свяжитесь со мной [ruslankhh@gmail.com](mailto:ruslankhh+gh-readme@gmail.com).
