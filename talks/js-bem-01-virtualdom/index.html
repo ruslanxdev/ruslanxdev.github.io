@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Виртуальный БЭМ, DOM и абстрактное дерево — Talks — Руслан Хуснетдинов</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="libs/shower/themes/shower-material/styles/screen-16x10.css">
+	<link rel="stylesheet" href="libs/highlight/styles/atom-one-light.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Виртуальный БЭМ, DOM и абстрактное дерево</h1>
+		<p>Руслан Хуснетдинов</p>
+	</header>
+
+	<section class="slide slide-cover" id="cover">
+		<h2>Виртуальный БЭМ, DOM<br>и абстрактное дерево</h2>
+	</section>
+
+	<section class="slide slide-2">
+		<h2>Абстрактное синтаксическое дерево (AST)</h2>
+		<p class="next"><strong>AST</strong> — это дерево, которое является промежуточным представлением программы, которое затем используется в компиляторе или интерпретаторе компьютерной программы для оптимизации и генерации кода.</p>
+	</section>
+
+	<section class="slide slide-3">
+		<h2>Пример — программа</h2>
+		<pre>
+			<code class="javascript">
+function identity(value) {
+	return value;
+}
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide slide-4">
+		<h2>Пример — AST-дерево (условно)</h2>
+		<pre class="small">
+			<code class="json">
+{
+	"type": "Program",
+	"body": [{
+		"type": "FunctionDeclaration",
+		"id": { "type": "Identifier", "name": "identity" },
+		"params": [
+			{ "type": "Identifier", "name": "value" }
+		],
+		"body": {
+			"type": "BlockStatement",
+			"body": [
+				{
+					"type": "ReturnStatement",
+					"argument": { "type": "Identifier", "name": "value" }
+				}
+			]
+		}
+	}]
+}
+			</code>
+		</pre>
+		<div class="slide-footer"><a href="https://astexplorer.net" target="_blank">AST Explorer</a></div>
+	</section>
+
+	<section class="slide slide-4">
+		<h2>Document Object Model (DOM)</h2>
+		<p class="next"><strong>DOM</strong> — способ представления структурного документа с помощью объектов.</p>
+		<p class="next"><strong>Проблема DOM</strong> — он никогда не был рассчитан для создания динамического пользовательского интерфейса (UI). Из-за этого есть проблемы с производительностью при работе с большим количеством элементов.</p>
+		<p class="next"><strong>Решение</strong> — Virtual DOM.</p>
+	</section>
+
+	<section class="slide slide-5">
+		<h2>Пример — DOM Tree</h2>
+		<figure>
+			<img class="cover" src="./images/dom.svg" alt="DOMTree">
+		</figure>
+		<div class="slide-footer">
+			<a href="https://learn.javascript.ru/dom-nodes" target="_blank">Дерево DOM</a>
+		</div>
+	</section>
+
+	<section class="slide slide-6">
+		<h2>Virtual DOM</h2>
+		<p class="next"><strong>Virtual DOM</strong> — это это техника и набор библиотек / алгоритмов, который описывает структуру реального DOM-дерева в сокращенном виде и за счет этого позволяет улучшить производительность, избегая прямой работы с DOM-ом.</p>
+	</section>
+
+	<section class="slide slide-7">
+		<h2>Пример — HTML</h2>
+		<pre>
+			<code class="html">
+&#x3C;a class="Link" href="https://ruslankhh.com"&#x3E;&#x3C;/a&#x3E;
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide slide-8">
+		<h2>Пример — Virtual DOM Tree</h2>
+		<pre>
+			<code class="json">
+{
+	"type": "element",
+	"tagName": "a",
+	"properties": {
+		"href": "https://ruslankhh.com",
+		"className": ["Link"]
+	},
+	"children": []
+}
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide slide-9">
+		<h2>Как работает Virtual DOM?</h2>
+	</section>
+
+	<section class="slide slide-cover">
+		<figure>
+			<img class="cover cover-lg" src="./images/virtualdom.png" alt="Как работает Virtual DOM?">
+		</figure>
+		<div class="slide-footer">
+			<a href="https://habr.com/post/256965" target="_blank">VЧто такое Virtual DOM?</a><br>
+			<a href="./images/virtualdom.png" target="_blank">Virtual DOM алгоритм схема для Preact</a><br>
+			<a href="https://medium.com/@abraztsov/how-virtual-dom-work-567128ed77e9" target="_blank">Как работает Virtual DOM ?</a>
+		</div>
+	</section>
+
+	<section class="slide slide-11">
+		<h2>Кто использует Virtual DOM?</h2>
+		<ul>
+			<li>React</li>
+			<li>Preact</li>
+			<li>...</li>
+			<li>БЭМ</li>
+		</ul>
+	</section>
+
+	
+	<section class="slide slide-12">
+		<h2>БЭМ</h2>
+		<p class="next"><strong>БЭМ</strong> (Блок, Элемент, Модификатор) — это это техника и набор библиотек / алгоритмов, в основе которого лежит принцип разделения интерфейса на независимые блоки.</p>
+		<div class="slide-footer">
+			<a href="https://ru.bem.info" target="_blank">БЭМ Инфо</a>
+		</div>
+	</section>
+
+	<section class="slide slide-7">
+		<h2>Пример — HTML</h2>
+		<pre>
+			<code class="html">
+&#x3C;a class="Link Link_color_red Menu-Link" href="https://ruslankhh.com"&#x3E;&#x3C;/a&#x3E;
+			</code>
+		</pre>
+	</section>
+
+	<section class="slide slide-8">
+		<h2>Пример — BEM Tree</h2>
+		<pre>
+			<code class="json">
+{
+	block: 'Link',
+	mods: {
+		color: 'red'
+	},
+	mix: { block: 'Menu', elem: 'Link' }
+	content: []
+}
+			</code>
+		</pre>
+	</section>
+	
+	<section class="slide" id="see-more">
+		<h2>Конец</h2>
+		<ul>
+			<li><a href="https://twitter.com/ruslankhh" target="_blank">twitter.com/ruslankhh</a></li>
+			<li><a href="https://github.com/ruslankhh" target="_blank">github.com/ruslankhh</a></li>
+		</ul>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="libs/shower/shower.min.js"></script>
+	<script src="libs/highlight/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad()</script>
+
+</body>
+</html>
