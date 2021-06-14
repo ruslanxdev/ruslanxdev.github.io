@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
+import Container from './Container'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -29,14 +30,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const pageStyles = {
-  maxWidth: '52em',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  paddingRight: '2em',
-  paddingLeft: '2em',
-}
-
 // markup
 const Layout = ({ pageTitle, isHome, children }) => {
   return (
@@ -44,8 +37,10 @@ const Layout = ({ pageTitle, isHome, children }) => {
       <GlobalStyle />
       <title>{pageTitle}</title>
       <Header isHome={isHome} />
-      <main style={pageStyles}>
-        {children}
+      <main>
+        <Container>
+          {children}
+        </Container>
       </main >
       <Footer />
     </React.Fragment>

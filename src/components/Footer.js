@@ -1,16 +1,11 @@
 import * as React from 'react'
 
+import Container from './Container'
 import LinkList from './LinkList'
 
 // styles
 const footerStyles = {
-  maxWidth: '52em',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  paddingTop: '2em',
-  paddingBottom: '2em',
-  paddingRight: '2em',
-  paddingLeft: '2em',
+  paddingBottom: '1em',
 }
 
 // data
@@ -25,8 +20,10 @@ const links = [
 const Footer = () => {
   return (
     <footer style={footerStyles}>
-      <LinkList items={links} />
-      <div>© 2021 Ruslan Khusnetdinov</div>
+      <Container>
+        <LinkList items={links} />
+        <div>© 2021 Ruslan Khusnetdinov</div>
+      </Container>
     </footer >
   )
 }
