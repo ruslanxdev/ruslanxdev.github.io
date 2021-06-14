@@ -1,17 +1,12 @@
 import * as React from 'react'
 
+import Container from './Container'
 import LinkList from './LinkList'
 
 // styles
 const headerStyles = {
-  maxWidth: '52em',
-  height: '8em',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  paddingTop: '2em',
-  paddingBottom: '2em',
-  paddingRight: '2em',
-  paddingLeft: '2em',
+  height: '7em',
+  paddingTop: '1em',
 }
 
 const hiddenHeaderStyles = {
@@ -35,10 +30,12 @@ const links = [
 const Header = ({ isHome = false }) => {
   return (
     <header style={isHome ? hiddenHeaderStyles : headerStyles}>
-      <div>Ruslan Khusnetdinov</div>
-      <nav>
-        <LinkList items={links} />
-      </nav>
+      <Container>
+        <div>Ruslan Khusnetdinov</div>
+        <nav>
+          <LinkList items={links} />
+        </nav>
+      </Container>
     </header >
   )
 }
