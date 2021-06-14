@@ -14,7 +14,6 @@ const headerStyles = {
 
 const navStyles = {
   position: 'relative',
-  marginTop: '1em',
 }
 
 const hiddenNavStyles = {
@@ -53,6 +52,7 @@ const imageStyles = {
 
 // data
 const links = [
+  { to: '/', text: 'Home' },
   { text: 'Talks' },
   { text: 'Blog' },
 ]
@@ -74,9 +74,12 @@ const Header = ({ isHome = false }) => {
             />
           </Link>
         </ImageWrapper>
-        <nav style={isHome ? hiddenNavStyles : navStyles}>
-          <LinkList items={links} />
-        </nav>
+        <div style={isHome ? hiddenNavStyles : navStyles}>
+          <div>Ruslan Khusnetdinov</div>
+          <nav>
+            <LinkList items={links} />
+          </nav>
+        </div>
       </Container>
     </header >
   )
