@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+
+import LinkList from './LinkList'
 
 // styles
 const footerStyles = {
@@ -12,38 +13,19 @@ const footerStyles = {
   paddingLeft: '2em',
 }
 
-const navListStyles = {
-  listStyleType: 'none',
-  paddingLeft: 0,
-}
-
-const navListItemStyles = {
-  display: 'inline-block',
-  verticalAlign: 'middle',
-  marginRight: 15,
-}
-
 // data
-const list = [
-  { to: 'https://github.com/ruslanxdev', text: 'GitHub' },
-  { to: 'https://www.linkedin.com/in/ruslanxdev', text: 'LinkedIn' },
-  { to: 'https://t.me/ruslanxdev', text: 'Telegram' },
-  { to: 'mailto://ruslanx.dev+site@gmail.com', text: 'Email' },
+const links = [
+  { href: 'https://github.com/ruslanxdev', text: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/ruslanxdev', text: 'LinkedIn' },
+  { href: 'https://t.me/ruslanxdev', text: 'Telegram' },
+  { href: 'mailto:ruslanx.dev+site@gmail.com', text: 'Email' },
 ]
 
 // markup
 const Footer = () => {
   return (
     <footer style={footerStyles}>
-      <ul style={navListStyles}>
-        {list.map(({ to, text }, i) => {
-          if (to) {
-            return <li style={navListItemStyles} key={i}><Link to={to}>{text}</Link></li>
-          }
-
-          return <li style={navListItemStyles} key={i}><s>{text}</s></li>
-        })}
-      </ul>
+      <LinkList items={links} />
       <div>© 2021 Ruslan Khusnetdinov</div>
     </footer >
   )

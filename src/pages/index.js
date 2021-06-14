@@ -2,16 +2,11 @@ import * as React from 'react'
 
 import Layout from '../components/Layout'
 
-// styles
-const homeHeaderStyles = {
-  // display: 'none',
-}
-
 // markup
 const IndexPage = () => {
   return (
     <Layout pageTitle="Ruslan Khusnetdinov" isHome={true}>
-      <h1 style={homeHeaderStyles}>Ruslan Khusnetdinov</h1>
+      <h1>Ruslan Khusnetdinov</h1>
       <p>
         Hi, I am a front-end developer and I work at <s>Freelance</s> → <s>Uchi.ru</s> → Yandex.
         <br />
