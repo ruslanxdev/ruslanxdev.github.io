@@ -25,7 +25,7 @@ const hiddenNavStyles = {
   WebkitUserSelect: 'none',
 }
 
-const ImageWrapper = styled.div`
+const ImageHomeWrapper = styled.div`
   display: block;
   position: absolute;
   width: 6em;
@@ -39,12 +39,18 @@ const ImageWrapper = styled.div`
 
   @media (max-width: 768px) {
     display: inline-block;
-    width: 4em;
-    height: 4em;
     float: left;
     position: relative;
-    margin-top: -0.5em;
+    margin-top: 2em;
     margin-left: 0;
+  }
+`
+
+const ImagePageWrapper = styled(ImageHomeWrapper)`
+  @media (max-width: 768px) {
+    width: 4em;
+    height: 4em;
+    margin-top: -0.5em;
     margin-right: 1em;
   }
 `
@@ -66,6 +72,8 @@ const links = [
 
 // markup
 const Header = ({ isHome = false }) => {
+  const ImageWrapper = isHome ? ImageHomeWrapper : ImagePageWrapper;
+
   return (
     <header style={headerStyles}>
       <Container>
