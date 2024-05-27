@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 const linkListStyles = {
   listStyleType: 'none',
   paddingLeft: 0,
+  marginTop: '0.5em',
 }
 
 const linkListItemStyles = {
