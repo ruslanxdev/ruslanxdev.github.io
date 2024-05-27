@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Ruslan Khusnetdinov',
+    title: 'Руслан Хуснетдинов',
     siteUrl: 'https://ruslanx.dev',
   },
   plugins: [
@@ -14,7 +14,6 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
-    'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

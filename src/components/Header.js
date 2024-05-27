@@ -30,16 +30,22 @@ const ImageWrapper = styled.div`
   position: absolute;
   width: 6em;
   height: 6em;
-  margin-top: 9.5em;
-  margin-left: -7em;
+  margin-top: 9em;
+  margin-left: -7.5em;
   z-index: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: black;
 
   @media (max-width: 768px) {
     display: inline-block;
+    width: 4em;
+    height: 4em;
     float: left;
     position: relative;
-    margin-top: -1.5em;
-    margin-left: -1em;
+    margin-top: -0.5em;
+    margin-left: 0;
+    margin-right: 1em;
   }
 `
 
@@ -48,13 +54,14 @@ const imageStyles = {
   height: '100%',
   maxWidth: '100%',
   maxHeight: '100%',
+  transition: 'none'
 }
 
 // data
 const links = [
-  { to: '/', text: 'Home' },
-  { text: 'Talks' },
-  { text: 'Blog' },
+  { to: '/cv', text: 'CV' },
+  { text: 'Доклады' },
+  { text: 'Блог' },
 ]
 
 // markup
@@ -65,8 +72,8 @@ const Header = ({ isHome = false }) => {
         <ImageWrapper>
           <Link to={'/'}>
             <StaticImage style={imageStyles}
-              alt="Illustration of the head of Ruslan Khusnetdinov"
-              src="../images/icon.png"
+              alt="Руслан Хуснетдинов"
+              src="../images/ruslankhh-2024.jpg"
               placeholder="none"
               layout="fixed"
               width={100}
@@ -75,7 +82,7 @@ const Header = ({ isHome = false }) => {
           </Link>
         </ImageWrapper>
         <div style={isHome ? hiddenNavStyles : navStyles}>
-          <div>Ruslan Khusnetdinov</div>
+          <div>Руслан Хуснетдинов</div>
           <nav>
             <LinkList items={links} />
           </nav>

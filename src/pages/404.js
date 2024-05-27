@@ -4,21 +4,22 @@ import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 
 // markup
-const IndexPage = () => {
+const NotFoundPage = () => {
   return (
-    <Layout pageTitle="Not found">
-      <h1>Page not found</h1>
+    <Layout pageTitle="Страница не найдена">
+      <h1>Страница не найдена</h1>
       <p >
-        Sorry{' '}
-        <span role='img' aria-label='Pensive emoji'>
+        Извините{' '}
+        <span role='img' aria-label='Грустный emoji'>
           😔
         </span>{' '}
-        we couldn’t find what you were looking for.
-        <br />
-        <Link to='/'>Go home</Link>.
+        мы не можем найти запрашиваемую вами страницу.
+      </p>
+      <p>
+        <Link to='/'>На главную</Link>.
       </p>
     </Layout>
   )
 }
 
-export default IndexPage
+export default NotFoundPage

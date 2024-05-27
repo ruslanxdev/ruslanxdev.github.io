@@ -12,8 +12,8 @@ const footerStyles = {
 const links = [
   { href: 'https://github.com/ruslanxdev', text: 'GitHub' },
   { href: 'https://www.linkedin.com/in/ruslanxdev', text: 'LinkedIn' },
-  { href: 'https://t.me/ruslanxdev', text: 'Telegram' },
-  { href: 'mailto:ruslanx.dev+site@gmail.com', text: 'Email' },
+  { href: 'https://t.me/superadventurer', text: 'Telegram' },
+  { href: 'mailto:ruslankhh@gmail.com', text: 'Email' },
 ]
 
 // markup
@@ -22,7 +22,7 @@ const Footer = () => {
     <footer style={footerStyles}>
       <Container>
         <LinkList items={links} />
-        <div>© 2021 Ruslan Khusnetdinov</div>
+        <div>© 2024 Руслан Хуснетдинов</div>
       </Container>
     </footer >
   )

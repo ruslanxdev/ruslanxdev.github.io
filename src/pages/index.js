@@ -1,16 +1,18 @@
 import * as React from 'react'
+import { Link } from 'gatsby'
 
 import Layout from '../components/Layout'
 
 // markup
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Ruslan Khusnetdinov" isHome={true}>
-      <h1>Ruslan Khusnetdinov</h1>
+    <Layout pageTitle="Руслан Хуснетдинов" isHome={true}>
+      <h1>Руслан Хуснетдинов</h1>
       <p>
-        Hi, I am a front-end developer and I work at <s>Freelance</s> → <s>Uchi.ru</s> → Yandex.
-        <br />
-        Before that, I designed bridges for a long time.
+        Привет! Я продакт-менеджер и фронтенд разработчик. Работаю в <s>Uchi.ru</s> → <s>Яндексе</s> → <Link to='/cv'>ищу работу</Link>.
+      </p>
+      <p>
+        До этого долгое время проективровал мосты.
       </p>
     </Layout >
   )
