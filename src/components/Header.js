@@ -28,10 +28,10 @@ const hiddenNavStyles = {
 const ImageHomeWrapper = styled.div`
   display: block;
   position: absolute;
-  width: 6em;
-  height: 6em;
+  width: 10em;
+  height: 10em;
   margin-top: 9em;
-  margin-left: -7.5em;
+  margin-left: -12.5em;
   z-index: 1;
   border-radius: 50%;
   overflow: hidden;
@@ -41,6 +41,8 @@ const ImageHomeWrapper = styled.div`
     display: inline-block;
     float: left;
     position: relative;
+    width: 6em;
+    height: 6em;
     margin-top: 2em;
     margin-left: 0;
   }
@@ -66,8 +68,8 @@ const imageStyles = {
 // data
 const links = [
   { to: '/cv', text: 'CV' },
-  { text: 'Доклады' },
   { text: 'Блог' },
+  { text: 'Доклады' },
 ]
 
 // markup
@@ -84,8 +86,8 @@ const Header = ({ isHome = false }) => {
               src="../images/ruslankhh-2024.jpg"
               placeholder="none"
               layout="fixed"
-              width={100}
-              height={100}
+              width={320}
+              height={320}
             />
           </Link>
         </ImageWrapper>
