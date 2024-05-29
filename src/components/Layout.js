@@ -1,9 +1,14 @@
 import * as React from 'react'
+import { graphql, useStaticQuery } from "gatsby"
 import { createGlobalStyle } from 'styled-components'
+import { Link } from "gatsby"
+import { MDXProvider } from "@mdx-js/react"
 
-import Container from './Container'
-import Header from './Header'
-import Footer from './Footer'
+import Container from './Container.js'
+import Header from './Header.js'
+import Footer from './Footer.js'
+
+const shortcodes = { Link }
 
 // styles
 const GlobalStyle = createGlobalStyle`
@@ -19,32 +24,53 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
 
-  h1 {
-    font-size: 3em;
-    margin-top: 1em;
-    margin-bottom: .5em;
+  main {
+    font-size: 1.25rem;
+    line-height: 1.34;
   }
 
-  p {
-    font-size: 1.25em;
-    line-height: 1.34;
+  h1, h2, h3 {
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
   }
 `
 
 // markup
-const Layout = ({ pageTitle, isHome, children }) => {
+export const Layout = ({ pageTitle, isHome, children }) => {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  if (data?.site?.siteMetadata?.title) {
+    pageTitle = data.site.siteMetadata.title
+  }
+
   return (
-    <React.Fragment>
+    <>
       <GlobalStyle />
       <title>{pageTitle}</title>
       <Header isHome={isHome} />
       <main>
         <Container>
-          {children}
+          <h1>{pageTitle}</h1>
+          <MDXProvider components={shortcodes}>
+            {children}
+          </MDXProvider>
         </Container>
       </main >
       <Footer />
-    </React.Fragment>
+    </>
   )
 }
 

@@ -1,17 +1,22 @@
-module.exports = {
+import { dirname } from "path"
+import { fileURLToPath } from "url"
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+const config = {
   siteMetadata: {
     title: 'Руслан Хуснетдинов',
     siteUrl: 'https://ruslanx.dev',
   },
   plugins: [
+    'gatsby-plugin-mdx',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        icon: `${__dirname}/src/images/icon.png`,
       },
     },
     'gatsby-plugin-sharp',
@@ -20,17 +25,17 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/',
+        path: `${__dirname}/src/images/`,
       },
-      __key: 'images',
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: './src/pages/',
+        path: `${__dirname}/src/pages/`,
       },
-      __key: 'pages',
     },
   ],
-};
+}
+
+export default config

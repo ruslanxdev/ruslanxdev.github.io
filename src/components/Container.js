@@ -2,9 +2,9 @@ import * as React from 'react'
 
 // styles
 const containerStyles = {
-  maxWidth: '52em',
+  maxWidth: '52rem',
   margin: '0 auto',
-  padding: '1em',
+  padding: '1rem',
 }
 
 // markup
