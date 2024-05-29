@@ -26,10 +26,11 @@ const GlobalStyle = createGlobalStyle`
 
   main {
     font-size: 1.25rem;
+    line-height: 1.34;
   }
 
-  p {
-    line-height: 1.34;
+  h1, h2, h3 {
+    line-height: 1;
   }
 
   h1 {
