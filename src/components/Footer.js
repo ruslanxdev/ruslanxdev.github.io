@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import Container from './Container'
-import LinkList from './LinkList'
+import Container from './Container.js'
+import LinkList from './LinkList.js'
 
 // styles
 const footerStyles = {
-  paddingBottom: '1em',
+  paddingBottom: '1rem',
 }
 
 // data

@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import { Link } from 'gatsby'
 
-import Container from './Container'
-import LinkList from './LinkList'
+import Container from './Container.js'
+import LinkList from './LinkList.js'
 
 // styles
 const headerStyles = {
-  height: '7em',
-  paddingTop: '1em',
+  height: '7rem',
+  paddingTop: '1rem',
 }
 
 const navStyles = {
@@ -28,10 +28,10 @@ const hiddenNavStyles = {
 const ImageHomeWrapper = styled.div`
   display: block;
   position: absolute;
-  width: 10em;
-  height: 10em;
-  margin-top: 9em;
-  margin-left: -12.5em;
+  width: 10rem;
+  height: 10rem;
+  margin-top: 9rem;
+  margin-left: -12.5rem;
   z-index: 1;
   border-radius: 50%;
   overflow: hidden;
@@ -41,19 +41,19 @@ const ImageHomeWrapper = styled.div`
     display: inline-block;
     float: left;
     position: relative;
-    width: 6em;
-    height: 6em;
-    margin-top: 2em;
+    width: 6rem;
+    height: 6rem;
+    margin-top: 2rem;
     margin-left: 0;
   }
 `
 
 const ImagePageWrapper = styled(ImageHomeWrapper)`
   @media (max-width: 768px) {
-    width: 4em;
-    height: 4em;
-    margin-top: -0.5em;
-    margin-right: 1em;
+    width: 4rem;
+    height: 4rem;
+    margin-top: -0.5rem;
+    margin-right: 1rem;
   }
 `
 
