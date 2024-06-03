@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4 {
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     line-height: 1;
   }
 
@@ -68,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
   blockquote {
     margin-left: 0;
     margin-right: 0;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   p {
@@ -82,9 +82,9 @@ const GlobalStyle = createGlobalStyle`
 `
 
 // markup
-export const Layout = ({ pageTitle, isHome, children }) => {
+export const Layout = ({ pageTitle, title, isHome, children }) => {
   const data = useStaticQuery(graphql`
-    query HeaderQuery {
+    query {
       site {
         siteMetadata {
           title
@@ -93,14 +93,14 @@ export const Layout = ({ pageTitle, isHome, children }) => {
     }
   `)
 
-  if (data?.site?.siteMetadata?.title) {
-    pageTitle = data.site.siteMetadata.title
+  if (!title) {
+    title = `${pageTitle} — ${data.site?.siteMetadata?.title}`
   }
 
   return (
     <>
       <GlobalStyle />
-      <title>{pageTitle}</title>
+      <title>{title}</title>
       <Header isHome={isHome} />
       <main>
         <Container>

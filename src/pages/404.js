@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 
 // markup
-const NotFoundPage = () => {
+const Page = () => {
   return (
     <Layout pageTitle="Страница не найдена">
       <p>
@@ -20,4 +20,4 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage
+export default Page
