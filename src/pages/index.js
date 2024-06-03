@@ -4,19 +4,19 @@ import { Link } from 'gatsby'
 import Layout from '../components/Layout'
 
 // markup
-const IndexPage = () => {
+const Page = () => {
   return (
     <Layout pageTitle="Руслан Хуснетдинов" isHome={true}>
       <blockquote>
         <p>
-          Привет! Я продакт-менеджер и фронтенд разработчик. Работаю в <s>Uchi.ru</s> → <s>Яндексе</s> → <Link to='/cv'>ищу работу</Link>.
+          Привет! Я продакт-менеджер и фронтенд разработчик. Работаю в&nbsp;<s>Uchi.ru</s> → <s>Яндексе</s> → <Link to='/cv'>ищу работу</Link>.
         </p>
         <p>
-          До этого долгое время проектировал мосты.
+          До этого долгое время проективровал мосты.
         </p>
       </blockquote>
     </Layout>
   )
 }
 
-export default IndexPage
+export default Page

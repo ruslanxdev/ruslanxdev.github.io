@@ -68,7 +68,7 @@ const imageStyles = {
 // data
 const links = [
   { to: '/cv', text: 'CV' },
-  { text: 'Блог' },
+  { to: '/blog', text: 'Блог' },
   { text: 'Доклады' },
 ]
 
@@ -85,6 +85,7 @@ const Header = ({ isHome = false }) => {
               alt="Руслан Хуснетдинов"
               src="../images/ruslankhh-2024.jpg"
               placeholder="none"
+              loading="eager"
               layout="fixed"
               width={320}
               height={320}

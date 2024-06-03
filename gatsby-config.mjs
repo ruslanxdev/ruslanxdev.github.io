@@ -1,5 +1,6 @@
-import { dirname } from "path"
-import { fileURLToPath } from "url"
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+import remarkGfm from 'remark-gfm'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -9,7 +10,24 @@ const config = {
     siteUrl: 'https://ruslanx.dev',
   },
   plugins: [
-    'gatsby-plugin-mdx',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+        ],
+        mdxOptions: {
+          remarkPlugins: [
+            remarkGfm
+          ],
+        },
+      },
+    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sitemap',
@@ -33,6 +51,20 @@ const config = {
       options: {
         name: 'pages',
         path: `${__dirname}/src/pages/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages-mdx',
+        path: `${__dirname}/content/pages/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: `${__dirname}/content/blog/`,
       },
     },
   ],
