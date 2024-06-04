@@ -9,7 +9,7 @@ import LinkList from './LinkList.js'
 // styles
 const headerStyles = {
   height: '7rem',
-  paddingTop: '1rem',
+  paddingTop: '0.5rem',
 }
 
 const navStyles = {
@@ -18,7 +18,7 @@ const navStyles = {
 
 const hiddenNavStyles = {
   ...navStyles,
-  opacity: 0,
+  display: 'none',
   touchAction: 'none',
   pointerEvents: 'none',
   MozUserSelect: 'none',
@@ -30,17 +30,16 @@ const ImageHomeWrapper = styled.div`
   position: absolute;
   width: 10rem;
   height: 10rem;
-  margin-top: 9rem;
+  margin-top: 9.5rem;
   margin-left: -12.5rem;
   z-index: 1;
   border-radius: 50%;
   overflow: hidden;
   background-color: black;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     display: inline-block;
     float: left;
-    position: relative;
     width: 6rem;
     height: 6rem;
     margin-top: 2rem;
@@ -49,7 +48,8 @@ const ImageHomeWrapper = styled.div`
 `
 
 const ImagePageWrapper = styled(ImageHomeWrapper)`
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
+    position: relative;
     width: 4rem;
     height: 4rem;
     margin-top: -0.5rem;
@@ -65,11 +65,41 @@ const imageStyles = {
   transition: 'none'
 }
 
+const SiteTitle = styled.div`
+  display: inline-block;
+  position: absolute;
+  margin-left: -12.5rem;
+  line-height: 1.5;
+  z-index: 1;
+  vertical-align: top;
+  text-align: right;
+  width: 10rem;
+
+  @media (max-width: 1200px) {
+    text-align: left;
+    width: auto;
+    float: left;
+    position: relative;
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  @media (max-width: 576px) {
+    display: block;
+    width: calc(100% - 5rem);
+    margin-right: 0;
+  }
+`
+
+const linkStyles = {
+  color: 'black',
+  textDecoration: 'none',
+}
+
 // data
 const links = [
-  { to: '/cv', text: 'CV' },
   { to: '/blog', text: 'Блог' },
-  { text: 'Доклады' },
+  { to: '/cv', text: 'Резюме' },
 ]
 
 // markup
@@ -93,7 +123,7 @@ const Header = ({ isHome = false }) => {
           </Link>
         </ImageWrapper>
         <div style={isHome ? hiddenNavStyles : navStyles}>
-          <div>Руслан Хуснетдинов</div>
+          <SiteTitle><Link to={'/'} style={linkStyles}>Руслан Хуснетдинов</Link></SiteTitle>
           <nav>
             <LinkList items={links} />
           </nav>

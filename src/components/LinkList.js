@@ -1,23 +1,31 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 // styles
-const linkListStyles = {
-  listStyleType: 'none',
-  paddingLeft: 0,
-  marginTop: '0.5rem',
-}
+const List = styled.ul`
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  height: 1.5rem;
+
+  @media (max-width: 576px) {
+    margin-top: 0;
+  }
+`
 
 const linkListItemStyles = {
   display: 'inline-block',
-  verticalAlign: 'middle',
+  verticalAlign: 'top',
   marginRight: '1rem',
+  height: '1.5rem',
 }
 
 // markup
 const LinkList = ({ items }) => {
   return (
-    <ul style={linkListStyles}>
+    <List>
       {items.map(({ to, href, text }, i) => {
         if (to) {
           return <li style={linkListItemStyles} key={i}><Link to={to}>{text}</Link></li>
@@ -33,7 +41,7 @@ const LinkList = ({ items }) => {
 
         return <li style={linkListItemStyles} key={i}><s>{text}</s></li>
       })}
-    </ul>
+    </List>
   )
 }
 
