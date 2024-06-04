@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
   main {
     font-size: 1.125rem;
     line-height: 1.34;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4 {
