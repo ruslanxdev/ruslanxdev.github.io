@@ -4,27 +4,37 @@ import { styled } from 'styled-components'
 // markup
 const Container = styled.div`
   font-weight: normal;
-  color: darkgray;
 `
 
 const headerStyles = {
   1: {
     fontSize: '1.375rem',
-    marginTop: '-1rem'
+    marginTop: '-1rem',
+    color: 'darkgray',
   },
   2: {
     fontSize: '1.125rem',
-    marginTop: '-1rem'
+    marginTop: '-1rem',
+    color: 'darkgray',
   },
   3: {
     display: 'inline-block',
     fontSize: '1.125rem',
+    color: 'darkgray',
+  },
+  4: {
+    display: 'inline-block',
+  },
+  5: {
+    display: 'inline-block',
+    fontSize: '0.777778em',
+    color: 'darkgray',
   }
 }
 
-const SubHeader = ({ headerType = 1, children }) => {
+const SubHeader = ({ type = 1, children }) => {
   return (
-    <Container className={'SubHeader'} style={headerStyles[headerType]}>
+    <Container className={'SubHeader'} style={headerStyles[type]}>
       {children}
     </Container>
   )
