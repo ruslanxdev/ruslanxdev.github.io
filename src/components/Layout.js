@@ -39,12 +39,6 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1;
   }
 
-  h1 span, h2 span, h3 span, h4 span {
-    font-weight: normal;
-    color: darkgray;
-    font-size: 0.777778em;
-  }
-
   h1 {
     margin-top: 3rem;
     font-size: 3rem;
@@ -68,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
   blockquote {
     margin-left: 0;
     margin-right: 0;
-    font-size: 1.5rem;
+    font-size: 1.4375rem;
   }
 
   p {

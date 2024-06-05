@@ -7,7 +7,7 @@ import SubHeader from '../components/SubHeader'
 export default function Template({ data, children }) {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
-      <SubHeader headerType={2}>{data.mdx.frontmatter.date}</SubHeader>
+      <SubHeader type={2}>{data.mdx.frontmatter.date}</SubHeader>
       {children}
     </Layout>
   )

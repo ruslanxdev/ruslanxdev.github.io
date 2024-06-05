@@ -17,7 +17,7 @@ const Page = ({ data }) => {
         {
           data.allMdx?.nodes?.map((node, i) => (
             <li style={linkListItemStyles} key={i}>
-              <Link to={node.fields.slug}>{node.frontmatter.title}</Link> <SubHeader headerType={3}>{node.frontmatter.date}</SubHeader>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link> <SubHeader type={3}>{node.frontmatter.date}</SubHeader>
             </li>
           ))
         }
