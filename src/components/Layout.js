@@ -48,7 +48,6 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     margin-top: 3rem;
     font-size: 3rem;
-    margin-bottom: 1.5rem;
   }
 
   h2 {
