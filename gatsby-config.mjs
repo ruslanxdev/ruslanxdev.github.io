@@ -85,6 +85,16 @@ const config = {
         path: `${__dirname}/content/blog/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        trackingId: 97534752,
+        webvisor: true,
+        trackHash: true,
+        afterBody: false,
+        defer: false,
+      },
+    },
   ],
 }
 
