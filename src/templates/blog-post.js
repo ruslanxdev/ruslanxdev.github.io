@@ -6,7 +6,7 @@ import SubHeader from '../components/SubHeader'
 
 export default function Template({ data, children }) {
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout pageTitle={data.mdx.frontmatter.title} cover={data.mdx.frontmatter.cover}>
       <SubHeader type={2}>{data.mdx.frontmatter.date}</SubHeader>
       {children}
     </Layout>
@@ -19,6 +19,11 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "D MMMM, YYYY", locale: "ru")
+        cover {
+          childImageSharp {
+            gatsbyImageData(width: 160)
+          }
+        }
       }
     }
   }
