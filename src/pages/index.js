@@ -10,7 +10,7 @@ const Page = () => {
       <blockquote>
         <p>
           Привет! Я продакт-менеджер и разработчик. Работаю в&nbsp;<s style={({color: '#ed6c74'})}>Uchi.ru</s> → <s style={({color: '#ffcc00'})}>Яндексе</s> → <Link to='/cv'>ищу работу</Link>. 
-          Пишу в телеграм-канал <Link to='https://t.me/ruslanxdev'>Технопродакт</Link>.</p>
+          Пишу в&nbsp;телеграм-канал <Link to='https://t.me/ruslanxdev'>Технопродакт</Link>.</p>
         <p>До этого долгое время проективровал мосты.</p>
       </blockquote>
     </Layout>
