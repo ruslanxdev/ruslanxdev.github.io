@@ -6,13 +6,9 @@ import styled from 'styled-components'
 const List = styled.ul`
   list-style-type: none;
   padding-left: 0;
-  margin-top: 0.5rem;
+  margin-top: 0;
   line-height: 1.5;
   height: 1.5rem;
-
-  @media (max-width: 576px) {
-    margin-top: 0;
-  }
 `
 
 const linkListItemStyles = {

@@ -24,7 +24,6 @@ const config = {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
               destinationDir: 'static',
-              ignoreFileExtensions: ['png', 'jpg', 'jpeg', 'bmp', 'tiff'],
             },
           },
         ],
@@ -41,7 +40,19 @@ const config = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: `${__dirname}/src/images/icon.png`,
+        icon: `${__dirname}/src/images/icon-small.png`,
+        icons: [
+          {
+            "src": "icons/icon-small.png",
+            "sizes": "48x48 72x72 96x96 128x128",
+            "type": "image/png"
+          },
+          {
+            "src": "icons/icon-512.png",
+            "sizes": "256x256",
+            "type": "image/png"
+          },
+        ],
       },
     },
     'gatsby-plugin-sharp',

@@ -1,17 +1,19 @@
 import * as React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { createGlobalStyle } from 'styled-components'
-import { Link } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
+
+import { Link } from 'gatsby'
 
 import SubHeader from './SubHeader.js'
 import Container from './Container.js'
 import Header from './Header.js'
 import Footer from './Footer.js'
+import Cover from './Cover.js'
 
 const shortcodes = {
   SubHeader,
-  Link,
+  Link
 }
 
 // styles
@@ -76,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 // markup
-export const Layout = ({ pageTitle, title, isHome, children }) => {
+export const Layout = ({ pageTitle, cover, title, isHome, children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -98,6 +100,7 @@ export const Layout = ({ pageTitle, title, isHome, children }) => {
       <Header isHome={isHome} />
       <main>
         <Container>
+          {cover && <Cover data={cover} />}
           <h1>{pageTitle}</h1>
           <MDXProvider components={shortcodes}>
             {children}

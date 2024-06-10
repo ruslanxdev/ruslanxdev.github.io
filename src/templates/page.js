@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 
 export default function Template({ data, children }) {
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout pageTitle={data.mdx.frontmatter.title} cover={data.mdx.frontmatter.cover}>
       {children}
     </Layout>
   )
@@ -16,6 +16,11 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       frontmatter {
         title
+        cover {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
   }
