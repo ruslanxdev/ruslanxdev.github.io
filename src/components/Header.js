@@ -104,7 +104,7 @@ const Header = ({ isHome = false }) => {
           <Link to={'/'}>
             <StaticImage style={imageStyles}
               alt="Руслан Хуснетдинов"
-              src="../images/icon-small.png"
+              src="../images/icon-cropped.png"
               placeholder="none"
               loading="eager"
               layout="fixed"

@@ -40,7 +40,7 @@ const config = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: `${__dirname}/src/images/icon-small.png`,
+        icon: `${__dirname}/src/images/icon.png`,
         icons: [
           {
             "src": "icons/icon-128.png",
