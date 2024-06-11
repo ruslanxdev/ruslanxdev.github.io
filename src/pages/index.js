@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 // markup
 const Page = () => {
   return (
-    <Layout pageTitle="Руслан Хуснетдинов" isHome={true}>
+    <Layout title="Руслан Хуснетдинов" isHome={true}>
       <blockquote>
         <p>
           Привет! Я продакт-менеджер и разработчик. Работаю в&nbsp;<s style={({color: '#ed6c74'})}>Uchi.ru</s> → <s style={({color: '#ffcc00'})}>Яндексе</s> → <Link to='/cv'>ищу работу</Link>. 

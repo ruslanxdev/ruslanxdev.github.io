@@ -78,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 // markup
-export const Layout = ({ pageTitle, cover, title, isHome, children }) => {
+export const Layout = ({ title, cover, pageTitle, isHome, children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -89,19 +89,23 @@ export const Layout = ({ pageTitle, cover, title, isHome, children }) => {
     }
   `)
 
-  if (!title) {
-    title = `${pageTitle} — ${data.site?.siteMetadata?.title}`
+  if (!pageTitle) {
+    if (title === data.site?.siteMetadata?.title) {
+      pageTitle = title
+    } else {
+      pageTitle = `${title} — ${data.site?.siteMetadata?.title}`
+    }
   }
 
   return (
     <>
       <GlobalStyle />
-      <title>{title}</title>
+      <title>{pageTitle}</title>
       <Header isHome={isHome} />
       <main>
         <Container>
           {cover && <Cover data={cover} />}
-          <h1>{pageTitle}</h1>
+          <h1>{title}</h1>
           <MDXProvider components={shortcodes}>
             {children}
           </MDXProvider>

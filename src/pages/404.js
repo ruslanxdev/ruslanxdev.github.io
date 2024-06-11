@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 // markup
 const Page = () => {
   return (
-    <Layout pageTitle="Страница не найдена">
+    <Layout title="Страница не найдена">
       <p>
         Извините
         <span role="img" aria-label="Грустный emoji"> 😔 </span>

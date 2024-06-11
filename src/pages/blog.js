@@ -12,7 +12,7 @@ const linkListItemStyles = {}
 // markup
 const Page = ({ data }) => {
   return (
-    <Layout pageTitle="Блог">
+    <Layout title="Блог">
       <ul style={linkListStyles}>
         {
           data.allMdx?.nodes?.map((node, i) => (
