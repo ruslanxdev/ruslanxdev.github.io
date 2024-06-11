@@ -43,9 +43,20 @@ const config = {
         icon: `${__dirname}/src/images/icon-small.png`,
         icons: [
           {
-            "src": "icons/icon-small.png",
-            "sizes": "48x48 72x72 96x96 128x128",
+            "src": "icons/icon-128.png",
+            "sizes": "48x48 72x72 96x96",
             "type": "image/png"
+          },
+          {
+            "src": "icons/icon-196.png",
+            "sizes": "128x128 196x196",
+            "type": "image/png"
+          },
+          {
+            "src": "icons/icon-196.png",
+            "sizes": "128x128 196x196",
+            "type": "image/png",
+            "purpose": "maskable"
           },
           {
             "src": "icons/icon-512.png",
