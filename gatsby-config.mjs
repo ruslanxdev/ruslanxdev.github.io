@@ -40,21 +40,28 @@ const config = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: `${__dirname}/src/images/icon.png`,
+        name: 'Руслан Хуснетдинов',
+        short_name: 'Руслан Хуснетдинов',
+        description: 'Я продакт-менеджер с 8-летним опытом в разработке. Моя ключевая экспертиза в создании и разработке технически сложных продуктов и управлении кросс-функциональными командами. Умею быстро и недорого тестировать гипотезы, исследовать пользовательский опыт и анализировать данные.',
+        start_url: '/',
+        background_color: '#fff',
+        theme_color: '#fff',
+        display: 'standalone',
+        icon: `${__dirname}/src/images/icon-128.png`,
         icons: [
           {
             "src": "icons/icon-128.png",
-            "sizes": "48x48 72x72 96x96",
+            "sizes": "32x32 48x48",
             "type": "image/png"
           },
           {
             "src": "icons/icon-196.png",
-            "sizes": "128x128 196x196",
+            "sizes": "72x72 96x96 128x128 196x196",
             "type": "image/png"
           },
           {
             "src": "icons/icon-196.png",
-            "sizes": "128x128 196x196",
+            "sizes": "72x72 96x96 128x128 196x196",
             "type": "image/png",
             "purpose": "maskable"
           },
