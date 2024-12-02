@@ -9,7 +9,7 @@ const Page = () => {
     <Layout title="Руслан Хуснетдинов" isHome={true}>
       <blockquote>
         <p>
-          Привет! Я продакт-менеджер и разработчик. Работаю в&nbsp;<s style={({color: '#ed6c74'})}>Uchi.ru</s> → <s style={({color: '#ffcc00'})}>Яндексе</s> → <Link to='/cv'>ищу работу</Link>. 
+          Привет! Я продакт-менеджер и разработчик. Работаю в&nbsp;<s style={({color: '#ed6c74'})}>Uchi.ru</s> → <s style={({color: '#ffcc00'})}>Яндекс Поиске</s> → <s style={({color: '#4daaf8'})}>Яндекс Лавке</s> (моё <Link to='/cv'>резюме</Link>). 
           Пишу в&nbsp;телеграм-канал <Link to='https://t.me/ruslanxdev'>Технопродакт</Link>.</p>
         <p>До этого долгое время проективровал мосты.</p>
       </blockquote>
