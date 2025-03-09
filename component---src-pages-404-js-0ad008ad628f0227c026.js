@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkruslanx_dev=self.webpackChunkruslanx_dev||[]).push([[125],{3331:function(e,l,t){t.r(l);var n=t(6540),a=t(4794),r=t(2773);l.default=()=>n.createElement(r.A,{title:"Страница не найдена"},n.createElement("p",null,"Извините",n.createElement("span",{role:"img","aria-label":"Грустный emoji"}," 😔 "),n.createElement("br",null),"Мы не можем найти запрашиваемую вами страницу."),n.createElement("p",null,n.createElement(a.Link,{to:"/"},"На главную")))}}]);
+//# sourceMappingURL=component---src-pages-404-js-0ad008ad628f0227c026.js.map
