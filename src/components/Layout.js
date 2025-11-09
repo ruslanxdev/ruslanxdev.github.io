@@ -23,7 +23,13 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    background-color: #fff;
+    color-scheme: light;
+  }
+
   body {
+    background-color: #fff;
     color: #232129;
     font-family: -apple-system, BlinkMacSystemFont , 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
     margin: 0;
@@ -103,6 +109,8 @@ export const Layout = ({ title, cover, pageTitle, isHome, children }) => {
       <GlobalStyle />
       <Helmet>
         <title>{pageTitle}</title>
+        <meta name="color-scheme" content="light" />
+        <meta name="theme-color" content="#fff" />
       </Helmet>
       <Header isHome={isHome} />
       <main>
