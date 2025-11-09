@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const config = {
   siteMetadata: {
     title: 'Руслан Хуснетдинов',
-    siteUrl: 'https://ruslanx.dev',
+    siteUrl: 'https://ruslanx.ru',
   },
   plugins: [
     {
