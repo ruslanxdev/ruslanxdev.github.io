@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { createGlobalStyle } from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
+import { Helmet } from 'react-helmet'
 
 import { Link } from 'gatsby'
 
@@ -100,7 +101,9 @@ export const Layout = ({ title, cover, pageTitle, isHome, children }) => {
   return (
     <>
       <GlobalStyle />
-      <title>{pageTitle}</title>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <Header isHome={isHome} />
       <main>
         <Container>
