@@ -74,10 +74,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4375rem;
   }
 
-  p {
-    margin-bottom: 0;
-  }
-
   ul {
     margin-top: 0.25rem;
     padding-inline-start: 2rem;

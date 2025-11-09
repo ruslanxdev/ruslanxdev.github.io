@@ -15,6 +15,7 @@ const headerStyles = {
   2: {
     fontSize: '1.125rem',
     marginTop: '-1rem',
+    marginBottom: '1.5rem',
     color: 'darkgray',
   },
   3: {
